@@ -5,9 +5,20 @@ import { red,teal } from '@mui/material/colors';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import CardActions from '@mui/material/CardActions';
+import { makeStyles } from '@material-ui/core/styles';
 
-function showJobCards(props){
+const useStyles = makeStyles((theme) => ({
+    card: {
+      borderRadius: 50, // Set border radius
+      boxShadow: '0px 8px 16px rgba(0, 0, 0, 0.1)', // Set box shadow
+    },
+}));
+
+function ShowJobCards(props){
+
+    
+
+    const classes = useStyles();
 
     // const { palette } = createTheme();
     // const { augmentColor } = palette;
@@ -19,7 +30,7 @@ function showJobCards(props){
     // });
 
     return (
-    <Card style={{width:300}}>
+    <Card style={{width:300}} className={classes.card}>
         <CardHeader
             avatar={
                 <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
@@ -54,14 +65,16 @@ function showJobCards(props){
                 Minimum Experience: {props.details.minExp} years
             </Typography>
         </CardContent> 
-        <Button variant="contained" color="success" style={{ width: '94%', margin : 'auto',  marginLef:'20px' }}>
-            Easy Apply
-        </Button>
-        <Button variant="contained" color="success" style={{ width: '94%', margin : 'auto' }}>
-            Success
-        </Button> 
+        <div style={{ width: '94%', margin : 'auto'}}>
+            <Button variant="contained" color="success" style={{ width: '100%', marginBottom : '10px' }}>
+                Easy Apply
+            </Button>
+            <Button variant="contained" color="secondary" style={{ width: '100%', marginBottom : '20px' }}>
+                Success
+            </Button> 
+        </div>
     </Card>
     )
 }
 
-export default showJobCards;
+export default ShowJobCards;

@@ -16,7 +16,6 @@ const initialState = {
 const filtersReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_FILTER:
-            console.log(state);
             return {
                 ...state,
                 filters: state.filters.map((filter) =>
