@@ -9,8 +9,8 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
     card: {
-      borderRadius: 50, // Set border radius
-      boxShadow: '0px 8px 16px rgba(0, 0, 0, 0.1)', // Set box shadow
+      borderRadius: 30, // Set border radius
+      boxShadow: '0px 8px 16px rgba(0, 0, 0, 0.3)', // Set box shadow
     },
 }));
 
@@ -50,7 +50,7 @@ function ShowJobCards(props){
         />
         <CardContent>
             <Typography>
-                Estimaed salary : {props.details.minJdSalary}-{props.details.maxJdSalary}
+                Estimaed salary : {props.details.salaryCurrencyCode}{props.details.minJdSalary}-{props.details.maxJdSalary}
             </Typography>
             <Typography gutterBottom variant="h5" component="div">
                 About Company
@@ -62,7 +62,7 @@ function ShowJobCards(props){
                 {props.details.jobDetailsFromCompany}
             </Typography>
             <Typography>
-                Minimum Experience: {props.details.minExp} years
+                Minimum Experience: {props.details.minExp} Years
             </Typography>
         </CardContent> 
         <div style={{ width: '94%', margin : 'auto'}}>
@@ -70,7 +70,7 @@ function ShowJobCards(props){
                 Easy Apply
             </Button>
             <Button variant="contained" color="secondary" style={{ width: '100%', marginBottom : '20px' }}>
-                Success
+                Referral Available
             </Button> 
         </div>
     </Card>
